@@ -2,6 +2,7 @@ const LED_PIN = 25;
 var is_on: bool = true;
 
 const pi = @cImport({
+    @cInclude("zig-pico.h");
     @cInclude("pico/stdlib.h");
 });
 

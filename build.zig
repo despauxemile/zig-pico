@@ -22,7 +22,7 @@ pub fn build(b: *std.Build) anyerror!void {
     });
 
     // RP2040 setup -- removes #include for useless file for the 2040
-    lib.root_module.addCMacro("PICO_RP2040", "1");
+    lib.addIncludePath(b.path("include"));
 
     // link arm-none-eabi-newlib (on arch linux /usr/arm-none-eabi/)
     const arm_lib_path = "/usr/arm-none-eabi/include";
